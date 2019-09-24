@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">
+			var var01 = 10;
+			function func01() {
+				var var02 = 20;
+				if(true){
+					// 로컬변수 단 func01 내 어디서든 사용 가능하다.
+					var var03 = 30;
+					console.log("Var1 : " + var01);
+					console.log("Var2 : " + var02);
+					console.log("Var3 : " + var03);
+				}
+				console.log("Var1 : " + var01);
+				console.log("Var2 : " + var02);
+				console.log("Var3 : " + var03);
+			}			
+			func01()
+			
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

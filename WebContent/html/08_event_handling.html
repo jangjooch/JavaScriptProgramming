@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">
+			// func01() 되긴 한데 선언이 뒤에 있으므로 추천하지 않음.
+			function func01() {
+				console.log("Hi 07.html fucntion01");
+			}
+			function func02() {
+				x = 10;
+				y = 20;
+				re = x + y;
+				console.log("sum of x, y : " + re + "  fucntion02");
+			}
+			function func03(){
+				return true;
+				//return false;
+			}
+			function func04(){
+				console.log("On the Image")
+			}
+			function func05(){
+				console.log("Out of Image")
+			}
+		</script>
+	</head>
+	<body>
+		<button onclick="func01()">Call func01</button><br/>
+		<!-- 같은 html의 메소드를 실행 가능. -->
+		<button onclick="func02()">Call func02</button><br/>
+		<a href = "javascript:func01()">func01 activate</a><br/>
+		<a href = "javascript:func02()">func02 activate</a><br/>
+		<a href = "javascript:func02()">
+			<img alt="Fail To Call Image" src="../common/image/Crone01.png">
+		</a><br/>
+		<a href = "http://www.apache.org" onclick="return func03()">Apache</a>
+		<!-- a 태그에서는 onclick을 처리하고 나서 href를 처리한다. -->
+		<!-- 위에서는  return func03()으로 인하여 결과가 true일 경우에만 href가 사용될 수 있다.-->
+		
+		<form action="http://www.apache.org" onsubmit="return func03">
+		<!-- func03에 따른 실행 여부를 필터링이 가능하다. -->
+			<input type="submit" value = "Move">
+		</form>
+		<!-- form태그는 일정한 사용저의 입력에 따른 서버 전송에 사용됨. -->
+		<br/>
+		
+		<img alt="Image Cant Found" src="../common/image/Desert.jpg" width="300"
+			onmouseenter="func04()" onmouseleave="func05()">
+		
+	</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">
+			// 선언
+			// 실질적으로는 함수 객체를 생성하여 대입하는 것이다.
+			function func01(){
+				console.log("Func01() Activate")
+			}
+			
+			var func02 = function(){
+				console.log("Func02() Activate")
+			};
+			// 호출
+			func01();
+			// func01이 참조하는 함수 객체를 사용한다.
+			func02();
+			// func02이 참조하는 함수 객체를 사용한다.
+			var func03 = func01; // 즉 func03은 func01의 객체를 사용하는 것이다. 
+			func03();			
+			// javascript에서는 함수의 객체를 받아 사용하는 것이다.
+			
+			// 메개변수 있는 함수 선언
+			function func04(x, y){ // 바로 매개변수로 줄 수 있다.
+				var res = x + y;
+				console.log("Res : " + res);
+			}
+			func04(3,5);
+			
+			// 반환값있는 함수호출
+			function func05(x, y){
+				var res = x + y;
+				return res;
+			}
+			var result_main = func05(5,6);
+			console.log("Res_Main : " + result_main);
+			
+			
+			
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

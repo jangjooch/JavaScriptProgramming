@@ -4,13 +4,28 @@
 		<meta charset="UTF-8">
 		<title>Insert title here</title>
 		<style type="text/css">
+			html, body{
+				height: 100%;
+			}
+			#wrapper{
+				width: 100%;
+				height: 100%;
+				display: flex;
+				flex-direction: column;
+				/* position: fixed;
+				top: 0px;
+				right: 0px;
+				bottom: 0px;
+				left: 0px; */
+			}
 			#header{
 				border-bottom: 3px solid black;
 				margin-bottom: 15px
 			}
 			#content{
+				flex-grow: 1;
+				height: 95%;
 				display: flex;
-				border: 3px solid black;
 				/* flex-direction: row 가 디폴트이다.*/
 			}
 			#sideBar{
@@ -19,15 +34,41 @@
 				padding-right: 15px;
 				border-right: 3px solid black;
 			}
-			#center{
-				
+			#center{				
 				flex-grow: 1;
 				padding : 20px;
 				/* 남아있는 공간을 모두 차지함*/
 			}
+			#center iframe{
+				margin-top: 0px;
+				width: 100%;
+				height: 100%;
+			}
 			#footer{
 				border-top: 3px solid black;
 				margin-top: 15px
+			}
+			#HWcontent{
+				flex-grow: 1;
+				height: 95%;
+				padding-right: 15px;
+				border-top: 3px solid black;
+				display: flex;
+			}
+			#HWsideBar{
+				border: 3px solid gray;
+				background-color: olive;
+				padding: 15px;
+				width: 280px;
+			}
+			#HWcenter{
+				flex-grow : 1; 
+				padding: 20;
+			}
+			#HWcenter iframe{
+				margin: 0px;
+				width: 100%;
+				height: 100%;
 			}
 		</style>
 		
@@ -41,14 +82,34 @@
 		<div id = "content">
 			<div id = "sideBar">
 				<ul>
-					<li><a href = "./html/01_javascript_tag.html">01_javascript_tag.html</a></li>
-					<li>02_javascript_tag.html</li>
-					<li>03_javascript_tag.html</li>
-					<li>04_javascript_tag.html</li>					
-				</ul>				
+					<li><a href = "./html/01_javascript_tag.html" target="iframe">01_javascript_tag.html</a></li>
+					<li><a href = "./html/02_javascript_tag.html" target="iframe">02_javascript_tag.html</a></li>
+					<li><a href = "./html/03_javascript_comment.html" target="iframe">03_javascript_comment.html</a></li>
+					<li><a href = "./html/04_javascript_variable.html" target="iframe">04_javascript_variable.html</a></li>
+					<li><a href = "./html/05_javascript_variable.html" target="iframe">05_javascript_variable.html</a></li>
+					<li><a href = "./html/06_variable_scope.html" target="iframe">06_variable_scope.html</a></li>
+					<li><a href = "./html/07_javascript_function.html" target="iframe">07_javascript_fuction.html</a></li>
+					<li><a href = "./html/08_event_handling.html" target="iframe">08_event_handling.html</a></li>
+					<li><a href = "./html/09_global_function.html" target="iframe">09_global_function.html</a></li>
+					<li><a href = "./html/10_bulitin_class.html" target="iframe">10_bulitin_class.html</a></li>
+					<li><a href = "./html/11_javascript_array.html" target="iframe">11_javascript_array.html</a></li>
+					<li><a href = "./html/12_javascript_object.html" target="iframe">12_javascript_object.html</a></li>
+				</ul>
 			</div>
 			<div id = "center">
-			
+				<iframe src="http://tomcat.apache.org/" name="iframe" frameborder="0"></iframe>
+			</div>
+		</div>
+		<div id="HWcontent">
+			<div id = "HWsideBar">
+				<ol>
+					<li><a href = "./html/HW_01_image.html" target = HWiframe>HW_01.html</a></li>
+					<li><a href = "./html/HW_02_Input.html" target = HWiframe>HW_02.html</a></li>
+					<li><a href = "./html/HW_03_member.html" target = HWiframe>HW_03.html</a></li>
+				</ol>
+			</div>
+			<div id = "HWcenter">
+				<iframe name = "HWiframe" frameborader = "0"></iframe>
 			</div>
 		</div>
 		<div id = "footer">2019. Iot. JSH</div>

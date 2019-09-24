@@ -4,6 +4,19 @@
 		<meta charset="UTF-8">
 		<title>Insert title here</title>
 		<style type="text/css">
+			html, body{
+				margin: 0;
+			}
+			#wrapper{
+				width: 100%;
+				height: 100%;
+				
+				/* position: fixed;
+				top: 0px;
+				right: 0px;
+				bottom: 0px;
+				left: 0px; */
+			}
 			#header{
 				border-bottom: 3px solid black;
 				margin-bottom: 15px
@@ -11,6 +24,7 @@
 			#content{
 				display: flex;
 				border: 3px solid black;
+				height: 95vh;
 				/* flex-direction: row 가 디폴트이다.*/
 			}
 			#sideBar{
@@ -19,23 +33,22 @@
 				padding-right: 15px;
 				border-right: 3px solid black;
 			}
-			#center{
+			#center{				
 				flex-grow: 1;
-				padding: 20px;
+				padding : 20px;
 				/* 남아있는 공간을 모두 차지함*/
 			}
-			#center h4{
+			#center iframe{
 				margin-top: 0px;
+				width: 100%;
+				height: 100%;
 			}
 			#footer{
 				border-top: 3px solid black;
 				margin-top: 15px
 			}
 		</style>
-		<script type="text/javascript">
-			console.log("Hello JavaScript00");
-			/* html를 실행하면 탑다운 형식이기 때문에 먼저 실행된다. */
-		</script>
+		
 </head>
 <body>
 
@@ -44,25 +57,16 @@
 			<h3>JavaScript Programming</h3>
 		</div>
 		<div id = "content">
-			<div id = "sideBar" frameborder="0">
+			<div id = "sideBar">
 				<ul>
-					<li>01_javascript_tag.html</li>
+					<li><a href = "./html/01_javascript_tag.html">01_javascript_tag.html</a></li>
 					<li>02_javascript_tag.html</li>
 					<li>03_javascript_tag.html</li>
 					<li>04_javascript_tag.html</li>					
 				</ul>				
 			</div>
 			<div id = "center">
-				<h4>01_javascript_tag.html</h4>
-				<script type="text/javascript">
-					console.log("Hello JavaScript01");
-					/* web상에서 로그를 확인가능하다. */
-				</script>
-				<script type="text/javascript">
-					console.log("Hello JavaScript02");
-					console.log("Hello JavaScript03");
-					/* 여러개가 있어도 실행이 가능하다. */
-				</script>
+				<iframe src="http://tomcat.apache.org/" ></iframe>
 			</div>
 		</div>
 		<div id = "footer">2019. Iot. JSH</div>

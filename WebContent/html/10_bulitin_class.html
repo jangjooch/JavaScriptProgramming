@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">
+			function func01(){
+				var passwd = "123456789";
+				console.log(passwd.length);
+			}
+			function func02(){
+				var ssn = "123456-123456";
+				var se = ssn.charAt(7);
+				if(se == "1" || se == "3"){
+					console.log("Male");
+				}
+				else{
+					console.log("FeMale");
+				}
+			}
+			function func03(){
+				var ssn = "123456-123456";
+				var birth = ssn.substr(0,5);
+				var pwnum = ssn.substring(7,12);
+				console.log("birth : " + birth + " pwnum : " + pwnum);
+			}
+			function func04(){
+				var date = new Date();
+				var year = date.getFullYear();
+				var month = date.getMonth();
+				var day = date.getDate();
+				console.log(year + " | " + month + " | " + day);
+			}
+			function func05(radius){
+				var result = radius * radius * Math.PI;
+				console.log(result);
+			}
+		</script>
+	</head>
+	<body>
+		<button onclick="func01()"> String 123456789 Length</button>
+		<br>
+		<button onclick="func02()"> String ssn charAt(7)</button>
+		<br>
+		<button onclick="func03()"> ssn substring substr</button>
+		<br>
+		<button onclick="func04()"> DATE</button>
+		<br>
+		<button onclick="func05(5)"> Math</button>
+	</body>
+</html>

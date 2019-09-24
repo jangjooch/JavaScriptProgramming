@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">
+			var li;
+			var result = 0;
+			function input(){
+				var txtBox = document.getElementById("input");
+				li = txtBox.value;
+				//var line = txtBox.value.split("\n");
+				//console.log(line);
+				console.log(li);
+				arr = li.split(" ");
+				console.log(arr);
+				tool = arr.slice(1,2);				
+				num01 = parseInt(arr.slice(0,1));
+				num02 = parseInt(arr.slice(2));
+				if(tool == "+"){
+					result = num01 + num02;
+				}
+				else if(tool == '-'){
+					resutl = num01 - num02;
+				}
+				
+			}
+			function pow(){
+				if(li == null)
+					return;
+				result = result * 10;	
+			}
+			function output(){
+				document.getElementById("output").value = result;
+			}
+		</script>
+	</head>
+	<body>
+		<textarea rows="5" cols="20" id = "input"></textarea>
+		<button onclick="input()">Calculate</button>
+		<button onclick="pow()">Pow 10</button>
+		<button onclick="output()">Output</button>
+		<textarea rows="2" cols="20" id = "output"></textarea>
+	</body>
+</html>

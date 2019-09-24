@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">
+			var name;
+			var age;
+			var address;
+			var member;
+			var json;
+			function getInfo(){
+				get = document.getElementById("information");
+				arr = get.value.split("\n");
+				console.log(arr);
+				name = arr[0];
+				age = parseInt(arr[1]);
+				address = arr[2];
+			}
+			function Save(){
+				member = {
+					pname : name,
+					page : age,
+					paddress : address
+				};
+				json = JSON.stringify(member);
+				console.log(json);				
+			}
+			function show(){
+				saved = json;
+				man = JSON.parse(saved);
+				document.getElementById("sheet").value = man;
+			}
+			
+		</script>
+	</head>
+	<body>
+		<textarea rows="3" cols="20" id = "information"></textarea>
+		<button onclick="getInfo()">Get</button>
+		<button onclick = "Save()">Save</button>
+		<br>
+		<textarea rows="3" cols="20" id = "sheet"></textarea>
+		<button onclick="show()">Sheet</button>
+	</body>
+</html>

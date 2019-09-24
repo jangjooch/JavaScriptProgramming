@@ -20,17 +20,22 @@
 				border-right: 3px solid black;
 			}
 			#center{
-				
 				flex-grow: 1;
-				padding : 20px;
+				padding: 20px;
 				/* 남아있는 공간을 모두 차지함*/
+			}
+			#center h4{
+				margin-top: 0px;
 			}
 			#footer{
 				border-top: 3px solid black;
 				margin-top: 15px
 			}
 		</style>
-		
+		<script type="text/javascript">
+			console.log("Hello JavaScript00");
+			/* html를 실행하면 탑다운 형식이기 때문에 먼저 실행된다. */
+		</script>
 </head>
 <body>
 
@@ -41,14 +46,23 @@
 		<div id = "content">
 			<div id = "sideBar">
 				<ul>
-					<li><a href = "./html/01_javascript_tag.html">01_javascript_tag.html</a></li>
+					<li>01_javascript_tag.html</li>
 					<li>02_javascript_tag.html</li>
 					<li>03_javascript_tag.html</li>
 					<li>04_javascript_tag.html</li>					
 				</ul>				
 			</div>
 			<div id = "center">
-			
+				<h4>01_javascript_tag.html</h4>
+				<script type="text/javascript">
+					console.log("Hello JavaScript01");
+					/* web상에서 로그를 확인가능하다. */
+				</script>
+				<script type="text/javascript">
+					console.log("Hello JavaScript02");
+					console.log("Hello JavaScript03");
+					/* 여러개가 있어도 실행이 가능하다. */
+				</script>
 			</div>
 		</div>
 		<div id = "footer">2019. Iot. JSH</div>

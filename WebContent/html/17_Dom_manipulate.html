@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">
+			function func01(){
+				var div = document.querySelector("#div01");
+				div.innerHTML = "<img width='100' src='../common/image/Lighthouse.jpg' alt =''/>";
+			}
+			function func02(){
+				var div = document.querySelector("#div02");
+				div.style.width = "200px";
+				div.style.height = "300px";
+				div.style.backgroundColor = "#ff5500";
+			}
+		</script>
+	</head>
+	<body>
+		<button onclick="func01()">Fill Contents</button>
+		<button onclick="func02()">Set Div Style</button>
+		<hr>
+		<div id = "div01"></div>
+		<div id = "div02"></div>
+	</body>
+</html>

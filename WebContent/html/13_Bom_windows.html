@@ -3,8 +3,84 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Insert title here</title>
+		<script type="text/javascript">
+		// bom이 실행되는 경우에는 browser에서 해당 팝업에만 적용이 가능하다.
+			function func01(){
+				var w = window.innerWidth;
+				var h = window.innerHeight;
+				console.log("Width : " + w);
+				console.log("Height : " + h)
+			}
+			function func02(){
+				window.alert("Alert Message");				
+			}
+			function func03(){
+				var result = window.confirm("Comfirm Message");
+				if(result == true){
+					console.log("Confirmed");
+				}
+				else{
+					console.log("Cancled");
+				}
+			}
+			function func04(){
+				var input = prompt("Plz type Something","something");
+				// 지시 text, default text
+				if(input != null){
+					console.log(input + "is typed");
+				}
+				else{
+					console.log("cancled");
+					// cancle 클릭 시 input에 null이 적용됨
+				}
+			}
+			function func05(){
+				//window.open("http://apache.org"); -> 설정 없을 시 탭에 생성
+				window.open("08_event_handling.html","","width = 300,height=500");
+				// opend 할 주소, 이름, 사이즈
+				// 설정이 있을 시 정해진 크기의 새로운 윈도우창 생성. 팝업
+			}
+			function func06(){
+				intervalID = window.setInterval(function(){
+					console.log("Interval Message");
+				},1000);
+				// interval 생성.( 실행할 내용, 주기 시간 ms단위임)
+				// setInterval( func05(), 1000);
+			}
+			function func07(){
+				window.clearInterval(intervalID);
+				// interval의 참조명을 통한 interval 정지
+			}
+			function func08(){
+				alarmID = window.setTimeout(function(){
+					console.log("Alarm Activate");
+				},5000)
+				//setTimeout( 실행 코드 , 실행 시간)
+			}
+			function func09(){
+				window.clearTimeout(alarmID);
+				// timeout 해제
+			}
+			
+			
+		</script>
 	</head>
 	<body>
-		
+		<button onclick="func01()">ViewPoint Size</button>
+		<br>
+		<button onclick="func02()">Alarm Message</button>
+		<br>
+		<button onclick="func03()">Comfirm Message</button>
+		<br>
+		<button onclick="func04()">Prompt Input</button>
+		<br>
+		<button onclick="func05()">Window Open</button>
+		<br>
+		<button onclick="func06()">Interval Start</button>
+		<button onclick="func07()">Interval End</button>
+		<br>
+		<button onclick="func08()">Alarm Set</button>
+		<button onclick="func09()">Alarm Cancle</button>
+		<br>
 	</body>
 </html>

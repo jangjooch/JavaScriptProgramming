@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">
+			function func01(){
+				var img1 = document.querySelector("#img01");
+				img1.src = "../common/image/Crone01.png";
+			}
+			function func02(){
+				var var_list = document.querySelectorAll(".group01");
+				for(var i = 0 ; i < var_list.length ; i++){
+					var_list[i].src = "../common/image/Lighthouse.jpg";
+				}
+			}
+			function func03(){
+				var var_list = document.querySelectorAll("img");
+				for(var i = 0 ; i < var_list.length ; i++){
+					var_list[i].src = "../common/image/Koala.jpg";
+				}
+			}
+			function func04(){
+				var var_list = document.querySelectorAll("#div01 img");
+				for(var i = 0 ; i < var_list.length ; i++){
+					var_list[i].src = "../common/image/Hydrangeas.jpg";
+				}
+			}
+			function func05(){
+				var inputID = document.querySelector("#joinForm input[name=id]");
+				// 폼 joinForm 내부의 input 태그의 name이 id인 것의 값
+				console.log(inputID);
+				console.log(inputID.value);
+				var inputPW = document.querySelector("#joinForm input[name=pw]");
+				// 폼 joinForm 내부의 input 태그의 name이 id인 것의 값
+				var passwd = inputPW.value;
+				if(passwd == ""){
+					window.alert("input password");
+				}
+				else{
+					if(passwd.length < 5){
+						window.alert("input password longer than 5");
+					}
+					else{
+						window.confirm("Really?");
+					}
+				}
+				
+				
+				// 입력된 것의 정보의 value(해당 속성은 default로 존재한다)를 출력 
+				var inputHobby = document.querySelectorAll("#joinForm input[name=class]");
+				console.log(inputHobby);
+				var checkedHobby = document.querySelectorAll("#joinForm input[name=class]:checked");
+				console.log(checkedHobby);
+				for(var i = 0 ; i < checkedHobby.length ; i++){
+					console.log(checkedHobby[i].value);
+				}
+			}
+			function func06(){
+				// name으로 더 쉽게 접근이 가능하다.
+				// 하지만 이 방법으로는 checkbox는 가져오지 못한다.
+				var form = document.loginForm;
+				
+				var id = document.loginForm.id.value;
+				console.log("Login ID : " + id);
+				
+				var pw = document.loginForm.pw.value;
+				console.log("Login PW : " + pw);
+			}
+		</script>
+	</head>
+	<body>
+		<button onclick="func01()">Find by ID</button>
+		<br>
+		<button onclick="func02()">Find by Class Name</button>
+		<br>
+		<button onclick="func03()">Find by Tag</button>
+		<br>
+		<button onclick="func04()">Find by Tag in Div</button>
+		<br>
+		<button onclick="func05()">joinForm</button>
+		<br>
+		<button onclick="func06()">loginForm</button>
+		<hr>
+		<img id = "img01" alt="Non Image" src="../common/image/Desert.jpg" width="200">
+		<br>
+		<img class = "group01" alt="Non Image" src="../common/image/Desert.jpg" width="200">
+		<img class = "group01" alt="Non Image" src="../common/image/Desert.jpg" width="200">
+		<br>
+		
+		<div id = "div01">
+			<img alt="Non Image" src="../common/image/Desert.jpg" width="200">
+			<img alt="Non Image" src="../common/image/Desert.jpg" width="200">
+		</div>
+		<!-- id는 html 전체에 1개만 존재해야 한다. -->
+		<!-- name는 html 전체에 다수가 있어도 된다. -->
+		<form id = "joinForm" >
+			ID : <input name = "id" type = "text"/><br>
+			PW : <input name = "pw" type = "password"/><br>
+			CLASS : <input name = "class" type = "checkbox" value ="senior"/>Senior
+					<input name = "class" type = "checkbox" value ="beginner"/>Beginner
+					<br>
+		</form>
+		
+		<form name = "loginForm" >
+			ID : <input type = "text" name = "id"/><br>
+			PW : <input type = "password" name = "pw"/><br>
+			CLASS : <input type = "checkbox" name = "class"/>Senior
+					<input type = "checkbox" name = "class"/>Beginner
+					<br>
+		</form>
+		
+	</body>
+</html>
+
+
+
+
+
+
+
+

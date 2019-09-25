@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">
+			function func01(){
+				var var01 = document.getElementById("img01");
+				console.log(var01);
+				// 찾은 ID가 없다면 null이 발생한다.
+				var var02 = document.getElementById("img02");
+				console.log(var02);
+				var01.src = "../common/image/Crone01.png";
+				// src 속성 가져와 변화시킬 수 있다.
+			}
+			function func02(){
+				var var_list = document.getElementsByClassName("group01");
+				for(var i = 0 ;  i < var_list.length ; i++){
+					var_list[i].src = "../common/image/Lighthouse.jpg";
+				}
+			}
+			function func03(){
+				var var_list = document.getElementsByTagName("img");
+				for(var i = 0 ; i < var_list.length ; i++){
+					var_list[i].src = "../common/image/Koala.jpg";
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<button onclick="func01()">Find by ID</button>
+		<br>
+		<button onclick="func02()">Find by Class Name</button>
+		<br>
+		<button onclick="func03()">Find by Tag</button>
+		<hr>
+		<img id = "img01" alt="Non Image" src="../common/image/Desert.jpg" width="200">
+		<br>
+		<img class = "group01" alt="Non Image" src="../common/image/Desert.jpg" width="200">
+		<img class = "group01" alt="Non Image" src="../common/image/Desert.jpg" width="200">		
+	</body>
+</html>

@@ -8,7 +8,7 @@
 			function func01(){
 				// 전역 변수 car를 재정의
 				car = {
-						model : "K9",
+						model : "K11",
 						company : "KIA",
 						color : "White",
 						speed : 0,
@@ -65,14 +65,17 @@
 					console.log(json01);
 					var member2 = JSON.parse(json01);
 					console.log(member2.name);
-					console.log(member2.car.model);
+					console.log(member2.car.mosdel);
 				}
 		</script>
 	</head>
 	<body>
 		<button onclick="func01()">객체 생성</button>
+		<br/>
 		<button onclick="func02()">객체를 Json으로 변환</button>
+		<br/>
 		<button onclick="func03()">Json을 객체로 변환</button>
+		<br/>
 		<button onclick="func04()">여러 타입을 가진 객체</button>
 	</body>
 </html>

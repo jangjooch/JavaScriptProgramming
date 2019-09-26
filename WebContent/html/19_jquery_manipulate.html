@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<!-- JQuery 추가 -->
+		<script type="text/javascript" src = "../common/js/jquery-3.4.1.min.js">
+		</script>
+		<script type="text/javascript">
+			function func01(){
+				//var div = document.querySelector("#div01");
+				//div.innerHTML = "<img width='100' src='../common/image/Lighthouse.jpg' alt =''/>";
+				//$("#div01").html("<img width='100' src='../common/image/Lighthouse.jpg' alt =''/>");
+				$("#div01").append("<img width='100' src='../common/image/Lighthouse.jpg' alt =''/>");
+			}
+			function func02(){
+				//var div = document.querySelector("#div02");
+				//div.style.width = "200px";
+				//div.style.height = "300px";
+				//div.style.backgroundColor = "#ff5500";
+				var div = $("#div02");
+				div.css("width","200px");
+				div.css("height","300px");
+				div.css("background-color","#ff5500");
+			}
+		</script>
+	</head>
+	<body>
+		<button onclick="func01()">Fill Contents</button>
+		<button onclick="func02()">Set Div Style</button>
+		<hr>
+		<div id = "div01"></div>
+		<div id = "div02"></div>
+	</body>
+</html>

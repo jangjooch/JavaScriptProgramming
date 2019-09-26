@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript" src="../common/js/jquery-3.4.1.min.js"></script>
+		<script type="text/javascript">
+			function func01(){
+				// jquery ajax 객체 선언
+				$.ajax({ // 익명 객체를 통한 구현 및 선언
+					url : "./20_ajax_content1.html",
+					success: function(content){
+						// url의 내용이 불려진다면 자동적으로
+						// success를 실행하여 불러온 내용이 자동적으로
+						// content에 복사된다.
+						console.log(content);
+						console.log(1);
+						$("#div01").html(content);
+					}
+				});
+			}
+			var timerId = null;
+			var no = 1;
+			function func02(){
+				timerId = window.setInterval(function(){
+					console.log(no)
+					$.ajax({
+						url: "./20_ajax_content" + no + ".html",
+						success: function(content){
+							console.log(content);
+							$("#div01").html(content);
+						}
+					/*
+						success: function(data){
+						console.log(content);
+						$("#div01").html(data);
+							같은 의미이다.
+							success자체가 funciton이다.
+					}
+					*/
+					});
+					no ++;
+					if(no==4){
+						no = 1;
+					}
+				},2000);
+				// window.setInterval(기능,주기)
+			}
+			function func03(){
+				if(timerId != null){
+					window.clearInterval(timerId);
+				}				
+			}
+		</script>
+	</head>
+	<body>
+		<button onclick="func01()">부분 생성</button>
+		<button onclick="func02()">자동 부분 갱신 시작</button>
+		<button onclick="func03()">자동 부분 갱신 취소</button>
+		<hr>
+		<!-- inline css -->
+		<div style="display : flex; height = 300px;">
+			<div style="height = 100%; border: 3px solid black;">
+				<h4>[고정내용]</h4>
+				<img alt="Non" src="../common/image/naver_news.png">
+			</div>
+			<div id="div01" style="flex-grow:1; height=100%; border:3px solid black;">
+				
+			</div>
+		</div>
+	</body>
+</html>
